@@ -20,6 +20,10 @@ api = Api(app)
 
 jwt = JWT(app, authenticate, identity)  # /auth
 
+@app.route("/")
+def hello():
+    return "REST API activate."
+
 api.add_resource(Store, '/store/<string:name>')
 api.add_resource(Item, '/item/<string:name>')
 api.add_resource(ItemList, '/items')
